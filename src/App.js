@@ -28,11 +28,11 @@ export class App extends ArvaApp {
     static defaultDataSource() {
         /* Firebase initialization */
         firebase.initializeApp({
-            apiKey: "AIzaSyD-_gRPxH4kXU2uvfQwKa5cH7FPhZ5xZgg",
-            authDomain: "chatabledemo.firebaseapp.com",
-            databaseURL: "https://chatabledemo.firebaseio.com",
-            storageBucket: "chatabledemo.appspot.com",
-            messagingSenderId: "179843908148"
+            apiKey: "<api_key>",
+            authDomain: "<project>.firebaseapp.com",
+            databaseURL: "<database_url>",
+            storageBucket: "<storage_bucket>",
+            messagingSenderId: "<sender_id>"
         });
         return new FirebaseDataSource('/', {});
     }
