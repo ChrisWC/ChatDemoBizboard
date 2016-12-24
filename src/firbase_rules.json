@@ -1,0 +1,24 @@
+{
+    "rules": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "MessageStream": {     
+            "$message_id":{
+                "timestamp":{".validate":"newData.val() <= now"},
+                "senderNickname":{
+                    ".validate":"newData.isString() && newData.val().length > 0 && newData.val().length < 50"
+                },
+                "senderChannel":{
+                    ".validate":"newData.isString() && newData.val().length > 0 && newData.val().length < 50"
+                },
+                "sender":{
+                    ".validate":"newData.val() === auth.uid"
+                },
+                "value":{
+                    ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 50" 
+                },
+                "$other":{".validate":false}
+            }
+        }
+    }
+}
